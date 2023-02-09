@@ -26,13 +26,14 @@ class Counter1 extends React.Component {
 
 class FruitComponent extends React.Component {
   render() {
+    const fruits = ["바나나", "사과", "딸기"]
     return (
       <div>
         <h1>좋아하는 과일</h1>
         <ul>
-          <li>바나나</li>
-          <li>사과</li>
-          <li>딸기</li>
+          {
+            fruits.map((name, index) => (<li key={index}>{ name }</li>))
+          }
         </ul>
       </div>
     )
