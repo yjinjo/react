@@ -9,8 +9,11 @@ class Counter1 extends React.Component {
   }
 
   onClick = () => {
-    const { value } = this.state;
-    this.setState({ value: value + 1 });
+    // const { value } = this.state;
+    const value = this.state.value + 1;
+
+    // this.setState({ value: value + 1 });
+    this.setState({ value });
   }
 
   render() {
@@ -24,28 +27,11 @@ class Counter1 extends React.Component {
   }
 }
 
-class FruitComponent extends React.Component {
-  render() {
-    // const fruits = ["바나나", "사과", "딸기"]
-    return (
-      <div>
-        <h1>좋아하는 과일</h1>
-        <ul>
-          {
-            this.props.fruits.map((name, index) => (<li key={index}>{ name }</li>))
-          }
-        </ul>
-      </div>
-    )
-  }
-}
-
 function App() {
   const fruits = ["바나나", "사과", "딸기"]
 
   return <div>
     <Counter1 initialValue={ 10 } />
-    <FruitComponent fruits={fruits}/>
   </div>;
 }
 
