@@ -1,9 +1,13 @@
 import logo from "./logo.svg";
-// import './App.css';
-import "App.css";
+import { Button } from 'antd';
+import "./App.css";
 
 function App() {
-  return <div>Hello, React.</div>;
+  return <div>
+    <Button type="primary" onClick={ () => console.log("clicked") }>
+      Hello, Antd.
+    </Button>
+  </div>;
 }
 
 export default App;
