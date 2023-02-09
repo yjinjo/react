@@ -26,13 +26,13 @@ class Counter1 extends React.Component {
 
 class FruitComponent extends React.Component {
   render() {
-    const fruits = ["바나나", "사과", "딸기"]
+    // const fruits = ["바나나", "사과", "딸기"]
     return (
       <div>
         <h1>좋아하는 과일</h1>
         <ul>
           {
-            fruits.map((name, index) => (<li key={index}>{ name }</li>))
+            this.props.fruits.map((name, index) => (<li key={index}>{ name }</li>))
           }
         </ul>
       </div>
@@ -41,9 +41,11 @@ class FruitComponent extends React.Component {
 }
 
 function App() {
+  const fruits = ["바나나", "사과", "딸기"]
+
   return <div>
     <Counter1 initialValue={ 10 } />
-    <FruitComponent />
+    <FruitComponent fruits={fruits}/>
   </div>;
 }
 
